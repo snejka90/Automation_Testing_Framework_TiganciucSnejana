@@ -5,5 +5,6 @@ public class TestRunner {
         WebDriverManager webDriverManager = new WebDriverManager("CHROME");
 
         WebDriverManager.getDriver().get("https://www.google.md/");
+        WebDriverManager.getDriver().close();
     }
 }
