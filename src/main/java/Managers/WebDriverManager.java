@@ -2,6 +2,7 @@ package Managers;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class WebDriverManager {
@@ -14,7 +15,9 @@ public class WebDriverManager {
         switch (webDriverType){
             case "CHROME":
                 System.setProperty("webDriver.chrome.driver","src/main/resources/drivers/chromedriver_win32.zip.url");
-                driver = new ChromeDriver();
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments("--remote-allow-origins=*");
+                driver = new ChromeDriver(options);
                 break;
             case "FIREFOX":
                 System.setProperty("webDriver.geckodriver", "src/main/resources/drivers/geckodriver-v0.32.2-win32.zip.url");
@@ -37,5 +40,6 @@ public class WebDriverManager {
             System.out.println("Driver-ul a fost inchis");
         }
     }
+
 
 }
