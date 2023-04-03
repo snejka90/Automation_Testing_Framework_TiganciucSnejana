@@ -34,7 +34,7 @@ public class WebDriverManager {
         }
         return driver;
     }
-    public void closeSriver(){
+    public void closeDriver(){
         if (driver != null){
             driver.close();
             System.out.println("Driver-ul a fost inchis");

@@ -1,3 +1,5 @@
+package stepDefinitions;
+
 import Managers.WebDriverManager;
 import com.google.common.annotations.VisibleForTesting;
 import org.junit.Test;
