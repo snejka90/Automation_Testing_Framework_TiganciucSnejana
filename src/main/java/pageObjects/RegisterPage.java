@@ -32,4 +32,8 @@ public class RegisterPage extends Page {
         emailInput.sendKeys(email);
         passwordInput.sendKeys(password);
     }
+
+    public boolean allTheElementsAreDispalyed (){
+        return firstNameInput.isDisplayed() && lastNameInput.isDisplayed() && emailInput.isDisplayed() && passwordInput.isDisplayed() && continueButton.isDisplayed() && privacyButton.isDisplayed();
+    }
 }
