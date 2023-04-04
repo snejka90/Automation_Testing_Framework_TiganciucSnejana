@@ -15,7 +15,7 @@ public class JunitPractice {
     WebDriverManager webDriverManager = new WebDriverManager("CHROME");
  @BeforeEach
  public void beforeTestProcedure(){
-     webDriverManager.getDriver().get("https://demo.opencart.com/index.php?route=account/register&language=en-gb");
+     webDriverManager.getDriver().get("https://demo.opencart.com/");
  }
 
  @AfterEach
@@ -32,7 +32,8 @@ public class JunitPractice {
 
         boolean urlValid = webDriverManager.getDriver().getCurrentUrl().contains("register");
 
-        Assertions.assertTrue(urlValid, "Adreswa URL nu este valida");
+        Assertions.assertTrue(urlValid, "Adresa URL nu este valida");
+        webDriverManager.getDriver().close();
     }
     @Test
     @DisplayName ("Elementele paginii sunt disponibile")

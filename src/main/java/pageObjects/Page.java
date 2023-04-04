@@ -10,7 +10,7 @@ public abstract class Page {
     public Page (WebDriver driver){
         PageFactory.initElements(driver, this);
     }
-    @FindBy(xpath = "//*[@id=\"top\"]/div[2]/div[2]/ul/li[2]/div/a/span")
+    @FindBy(xpath = "//*[@id=\"top\"]/div[2]/div[2]/ul/li[2]/div/a")
     protected WebElement myAccountButton;
     @FindBy(xpath= "//*[@id=\"top\"]/div[2]/div[2]/ul/li[2]/div/ul/li[1]/a")
     protected WebElement registerButton;
