@@ -1,8 +1,7 @@
 package stepDefinitions;
 
 import Managers.WebDriverManager;
-import com.google.common.annotations.VisibleForTesting;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -25,14 +24,14 @@ public class JunitPractice {
 
     @Test
     @DisplayName("Adresa URL a paginii Register este disponibila din pagina Home")
-    public void verifyIfTheRegisterPageIsAccesible(){
+    public void verifyIfTheRegisterPageIsAccessible(){
 
         HomePage homePage = new HomePage(webDriverManager.getDriver());
         homePage.navigateToRegisterPage();
 
         boolean urlValid = webDriverManager.getDriver().getCurrentUrl().contains("register");
 
-        Assertions.assertTrue(urlValid, "Adresa URL nu este valida");
+       Assertions.assertTrue(urlValid, "Adresa URL nu este valida");
         webDriverManager.getDriver().close();
     }
     @Test
@@ -44,6 +43,6 @@ public class JunitPractice {
 
         RegisterPage registerPage = new RegisterPage(webDriverManager.getDriver());
 
-        Assertions.assertTrue(registerPage.allTheElementsAreDispalyed(),"Cel putin unul dintre elemente nu a fost afisat");
+        Assertions.assertTrue(registerPage.allTheElementsAreDisplayed(),"Cel putin unul dintre elemente nu a fost afisat");
     }
 }

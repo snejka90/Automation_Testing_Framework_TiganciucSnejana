@@ -3,6 +3,7 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.w3c.dom.html.HTMLInputElement;
 
 public class RegisterPage extends Page {
 
@@ -20,11 +21,11 @@ public class RegisterPage extends Page {
     @FindBy (xpath = "//*[@id=\"input-password\"]")
     private WebElement passwordInput;
     @FindBy (xpath = "//*[@id=\"input-newsletter-no\"]")
-    private WebElement Radio;
-    @FindBy (xpath = "#form-register > div > div > div > input")
-    private WebElement privacyButton;
-    @FindBy (xpath = "#form-register > div > div > button")
-    private WebElement continueButton;
+    public WebElement RadioButton;
+    @FindBy (xpath = "//*[@id=\"form-register\"]/div/div/div/input")
+    public WebElement privacyButton;
+    @FindBy (xpath = "//*[@id=\"form-register\"]/div/div/button")
+    public WebElement continueButton;
 
     public void fillInTheRegisterForm(String firstName,String lastName, String email, String password){
         firstNameInput.sendKeys(firstName);
@@ -33,7 +34,7 @@ public class RegisterPage extends Page {
         passwordInput.sendKeys(password);
     }
 
-    public boolean allTheElementsAreDispalyed (){
-        return firstNameInput.isDisplayed() && lastNameInput.isDisplayed() && emailInput.isDisplayed() && passwordInput.isDisplayed() && continueButton.isDisplayed() && privacyButton.isDisplayed();
+    public boolean allTheElementsAreDisplayed (){
+        return firstNameInput.isDisplayed() && lastNameInput.isDisplayed() && emailInput.isDisplayed() && passwordInput.isDisplayed() && RadioButton.isDisplayed() &&privacyButton.isDisplayed() && continueButton.isDisplayed();
     }
 }

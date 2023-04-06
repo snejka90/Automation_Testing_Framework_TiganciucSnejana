@@ -11,13 +11,12 @@ Feature: Register feature test suite
   Scenario Outline: Register page url contains the following word <my account>
     When dropdown is displayed
     And Register button is clicked
-    Then "my account" is present within the correct URL
+    Then "register" is present within the correct URL
     Examples:
-      | myAccount |
-      | firstName |
-      | lastName  |
-      | email     |
-      | password  |
+      | my account |
+      | register   |
+      | login      |
+
 
 
 
