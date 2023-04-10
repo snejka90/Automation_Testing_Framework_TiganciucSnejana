@@ -6,8 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.w3c.dom.html.HTMLInputElement;
 
 public class RegisterPage extends Page {
-
-
+    private final String ENDPOINT = "/index.php?route=account/register";
     public RegisterPage(WebDriver driver) {
         super(driver);
     }
@@ -36,5 +35,9 @@ public class RegisterPage extends Page {
 
     public boolean allTheElementsAreDisplayed (){
         return firstNameInput.isDisplayed() && lastNameInput.isDisplayed() && emailInput.isDisplayed() && passwordInput.isDisplayed() && RadioButton.isDisplayed() &&privacyButton.isDisplayed() && continueButton.isDisplayed();
+    }
+    public RegisterPage toPage(){
+        driver.get(BASER_URL + ENDPOINT);
+        return this;
     }
 }

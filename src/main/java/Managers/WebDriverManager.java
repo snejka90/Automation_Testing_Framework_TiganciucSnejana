@@ -40,6 +40,9 @@ public class WebDriverManager {
             System.out.println("Driver-ul a fost inchis");
         }
     }
+    public WebDriverManager(){
+        webDriverType = PropertiesManagers.getBrowserType();
+    }
 
 
 }

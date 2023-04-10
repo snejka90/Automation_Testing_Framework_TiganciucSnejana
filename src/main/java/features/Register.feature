@@ -1,7 +1,7 @@
 Feature: Register feature test suite
 
   Background:
-    Given "https://demo.opencart.com" is accessed
+    Given "HomePage" is clicked
 
   Scenario: Register Page URL is accessible from Home Page
     When dropdown is displayed
