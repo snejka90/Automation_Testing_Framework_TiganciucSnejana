@@ -14,6 +14,8 @@ public class HomePage extends Page {
     public void clickOnRegisterButton(){
         registerButton.click();
     }
+
+
     public HomePage toPage(){
         driver.get(BASER_URL + ENDPOINT);
         return this;

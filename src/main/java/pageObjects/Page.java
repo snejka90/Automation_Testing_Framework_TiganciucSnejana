@@ -37,6 +37,7 @@ public abstract class Page {
             e.printStackTrace();
         }
     }
+
     public static void clickElement(Object pageName, String elementName, WebDriver driver){
         WebElement webElement;
         Class clazz = null;

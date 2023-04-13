@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.w3c.dom.html.HTMLInputElement;
 
+import javax.swing.*;
+
 public class RegisterPage extends Page {
     private final String ENDPOINT = "/index.php?route=account/register";
     public RegisterPage(WebDriver driver) {
@@ -26,15 +28,26 @@ public class RegisterPage extends Page {
     @FindBy (xpath = "//*[@id=\"form-register\"]/div/div/button")
     public WebElement continueButton;
 
-    public void fillInTheRegisterForm(String firstName,String lastName, String email, String password){
+    public void fillInTheRegisterForm(String firstName,String lastName, String email, String password) {
         firstNameInput.sendKeys(firstName);
         lastNameInput.sendKeys(lastName);
         emailInput.sendKeys(email);
         passwordInput.sendKeys(password);
     }
+    public void clickRadioButton() {
+        RadioButton.click();
+    }
+    public void clickPrivacyButton() {
+        privacyButton.click();
+    }
+    public void clickContinueButton(){
+        continueButton.click();
+    }
 
     public boolean allTheElementsAreDisplayed (){
-        return firstNameInput.isDisplayed() && lastNameInput.isDisplayed() && emailInput.isDisplayed() && passwordInput.isDisplayed() && RadioButton.isDisplayed() &&privacyButton.isDisplayed() && continueButton.isDisplayed();
+        return firstNameInput.isDisplayed() && lastNameInput.isDisplayed() && emailInput.isDisplayed() &&
+                passwordInput.isDisplayed() &&
+                RadioButton.isDisplayed() &&privacyButton.isDisplayed() && continueButton.isDisplayed();
     }
     public RegisterPage toPage(){
         driver.get(BASER_URL + ENDPOINT);

@@ -13,11 +13,10 @@ public class TestRunner {
         homePage.navigateToRegisterPage();
 
         RegisterPage registerPage = new RegisterPage(webDriverManager.getDriver());
-        registerPage.fillInTheRegisterForm("Snejana", "Tiganciuc", "stiganciuc@gmail.com", "creative90");
-
-        registerPage.RadioButton.click();
-        registerPage.privacyButton.click();
-        registerPage.continueButton.click();
+        registerPage.fillInTheRegisterForm("Snejana", "Tiganciuc",
+                "stiganciuc@gmail.com", "creative90");
+        registerPage.clickPrivacyButton();
+        registerPage.clickContinueButton();
         Thread.sleep(10000);
 
         webDriverManager.getDriver().close();
