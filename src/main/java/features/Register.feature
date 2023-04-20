@@ -30,7 +30,7 @@ Feature: Register feature test suite
       | email     | stiganciuc@gmail.com |
       | password  | password             |
     #And privacy button is clicked
-    #And continue Button is clicked
+    #And continue button is clicked
     Then the following errors are displayed on the screen:
       | <error>                                                                         |
       | Warning:Please include an '@' in the mail address. '<email>' is missing an '@'. |
