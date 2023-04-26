@@ -15,7 +15,6 @@ public class TestRunner {
         RegisterPage registerPage = new RegisterPage(webDriverManager.getDriver());
         registerPage.fillInTheRegisterForm("Snejana", "Tiganciuc",
                 "stiganciuc@gmail.com", "creative90");
-        registerPage.clickPrivacyButton();
         registerPage.clickContinueButton();
         Thread.sleep(10000);
 

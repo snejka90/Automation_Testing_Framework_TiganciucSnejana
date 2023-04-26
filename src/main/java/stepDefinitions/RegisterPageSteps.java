@@ -26,12 +26,9 @@ public class RegisterPageSteps {
         registerPage.fillInTheRegisterForm(firstName, lastName, email, password);
     }
 
-    @And("privacy button is clicked")
-    public void privacyButtonIsClicked() {
-        registerPage.clickPrivacyButton();
-    }
 
-    @And("continue Button is clicked")
+
+    @And("continue button is clicked")
     public void continueButtonIsClicked() {
         registerPage.clickContinueButton();
     }

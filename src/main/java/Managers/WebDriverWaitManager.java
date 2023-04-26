@@ -9,13 +9,16 @@ import java.time.Duration;
 
 
 public class WebDriverWaitManager {
+
+    private static final WebDriver driver = WebDriverManager.getDriver();
     private static WebDriverWait wait;
 
-    public WebDriverWaitManager(WebDriver driver){
-        wait = new WebDriverWait(driver,  Duration.ofSeconds(30), Duration.ofSeconds(3000));
+
+    public WebDriverWaitManager(WebDriver driver)  {
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
-    public static void toBeClickable(WebElement element, WebDriver driver){
+    public static void toBeClickable(WebElement element){
         if(wait == null) new WebDriverWaitManager(driver);
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
