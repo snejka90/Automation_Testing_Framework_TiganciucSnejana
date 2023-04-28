@@ -21,7 +21,7 @@ public class HomePage extends Page {
     }
 
 
-    public HomePage toPage (){
+    public HomePage toPage(){
         driver.get(BASER_URL + ENDPOINT);
         return this;
     }

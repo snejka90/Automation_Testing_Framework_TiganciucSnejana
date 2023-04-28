@@ -66,7 +66,8 @@ public abstract class Page {
                     }
             }
     }
-    public Page toPage(){
+
+    public Page toPage() {
         driver.getCurrentUrl();
         return this;
     }

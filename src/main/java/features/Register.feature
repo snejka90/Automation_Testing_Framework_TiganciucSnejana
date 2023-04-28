@@ -25,11 +25,13 @@ Feature: Register feature test suite
     Then "RegisterPage" is opened
     Then "register" is present within the correct URL
     When the register account is populated with below data:
-      | firstName | Snejana              |
-      | lastName  | Tiganciuc            |
-      | email     | stiganciuc@gmail.com |
-      | password  | password             |
-    #And privacy button is clicked
+      | firstName       | Snejana              |
+      | lastName        | Tiganciuc            |
+      | email           | stiganciuc@gmail.com |
+      | telephone       | 062152771            |
+      | password        | password             |
+      | confirmPassword | password             |
+    And "privacyButton" button is clicked
     And "continueButton" button is clicked
     Then the following errors are displayed on the screen:
       | <error>                                                                         |

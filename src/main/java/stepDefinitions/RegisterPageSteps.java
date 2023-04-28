@@ -12,21 +12,22 @@ public class RegisterPageSteps {
     private TestContext testContext;
     private RegisterPage registerPage;
 
-    public RegisterPageSteps(TestContext context){
+    public RegisterPageSteps(TestContext context) {
         testContext = context;
         registerPage = new RegisterPage(testContext.getWebDriverManager().getDriver());
     }
 
     @When("the register account is populated with below data:")
-    public void theRegistrationFormIsPopulatedWithBelowData(Map<String, String> formData) {
+    public void theRegistrationFormIsPopulatedWithBelowData(Map<String, String> formData) throws InterruptedException {
         String firstName = formData.get("firstName");
         String lastName = formData.get("lastName");
         String email = formData.get("email");
+        String telephone = formData.get("telephone");
         String password = formData.get("password");
-        registerPage.fillInTheRegisterForm(firstName, lastName, email, password);
+        String confirmPass = formData.get("password");
+        registerPage.fillInTheRegisterForm(firstName, lastName, email, telephone, password, confirmPass);
+        Thread.sleep(300);
     }
-
-
 
     @And("continue button is clicked")
     public void continueButtonIsClicked() {

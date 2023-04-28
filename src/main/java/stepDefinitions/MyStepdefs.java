@@ -9,9 +9,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.Alert;
 import pageObjects.Page;
 
 import java.util.List;
+
+import static Managers.WebDriverManager.getDriver;
 
 
 public class MyStepdefs {
@@ -50,10 +53,11 @@ public class MyStepdefs {
         for (int i = 0; i < errorMessages.size(); i++) {
             boolean elementIsDisplayed = false;
             try {
-                String alertMessage = testContext.getWebDriverManager().getDriver().switchTo().alert().getText();
+                String alert = testContext.getWebDriverManager().getDriver().switchTo().alert().getText();
                 elementIsDisplayed = true;
             } catch (Exception e) {
                 e.printStackTrace();
+                logger.warn("Eroarea a fost depistata");
             }
             if (condition.contains("are not"))
                 Assert.assertTrue("The error message is not displayed.", elementIsDisplayed);

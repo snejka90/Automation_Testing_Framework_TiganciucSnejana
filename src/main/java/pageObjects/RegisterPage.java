@@ -19,22 +19,35 @@ public class RegisterPage extends Page {
     private WebElement lastNameInput;
     @FindBy(xpath = "//*[@id=\"input-email\"]")
     private WebElement emailInput;
+
+    @FindBy(xpath = "//*[@id=\"input-telephone\"]")
+    private WebElement telephoneInput;
+
     @FindBy(xpath = "//*[@id=\"input-password\"]")
     private WebElement passwordInput;
-    //    @FindBy (xpath = "//*[@id=\"input-newsletter-no\"]")
-//    public WebElement RadioButton;
-//    @FindBy (xpath = "//*[@id=\"form-register\"]/div/div/div/input")
-//    public WebElement privacyButton;
+
+    @FindBy(xpath = "//*[@id=\"input-confirm\"]")
+    private WebElement passwordConfirmInput;
+
+    @FindBy(xpath = "//*[@id=\"content\"]/form/div/div/input[1]")
+    public WebElement privacyButton;
+
     @FindBy(xpath = "//input[contains(@value,\"Continue\")]")
     public WebElement continueButton;
 
-    public void fillInTheRegisterForm(String firstName, String lastName, String email, String password) {
+    public void fillInTheRegisterForm(String firstName, String lastName, String email, String phone, String password, String confirmPass) {
         WebDriverWaitManager.toBeVisible(continueButton, driver);
 
         firstNameInput.sendKeys(firstName);
         lastNameInput.sendKeys(lastName);
         emailInput.sendKeys(email);
+        telephoneInput.sendKeys(phone);
         passwordInput.sendKeys(password);
+        passwordConfirmInput.sendKeys(confirmPass);
+    }
+
+    public void clickPrivacyButton() {
+        privacyButton.click();
     }
 
     public void clickContinueButton() {
@@ -42,8 +55,13 @@ public class RegisterPage extends Page {
     }
 
     public boolean allTheElementsAreDisplayed() {
-        return firstNameInput.isDisplayed() && lastNameInput.isDisplayed() && emailInput.isDisplayed() &&
+        return firstNameInput.isDisplayed() &&
+                lastNameInput.isDisplayed() &&
+                emailInput.isDisplayed() &&
+                telephoneInput.isDisplayed() &&
                 passwordInput.isDisplayed() &&
+                passwordConfirmInput.isDisplayed() &&
+                privacyButton.isDisplayed() &&
                 continueButton.isDisplayed();
     }
 

@@ -24,10 +24,10 @@ public class HomePageSteps {
     }
 
     @And("{string} button is clicked")
-    public void isClicked(String button) {
+    public void isClicked(String button) throws InterruptedException {
         Object page = testContext.getScenarioContext().getContext(ContextKeys.PAGE);
         Page.clickElement(page, button, testContext.getWebDriverManager().getDriver());
-
+Thread.sleep(3000);
     }
 
 }
